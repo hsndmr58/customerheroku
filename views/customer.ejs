@@ -1,0 +1,53 @@
+<%- include('partials/_header')%>
+
+  <!-- about section -->
+
+  <section class="about_section mt-4 mb-4">
+    <div class="container ">
+      <div class="row">
+        
+        <div class="col-md-6">
+          <div class="detail-box">
+            <form class="mb-5" action="/customers/delete" method="post">
+              <input type="hidden" name="delete" value="<%=customer._id%>">
+              <button class="btn btn-danger" onclick="return confirm('<%=customer.name%> Müşterisi Silinecek ')">Müşteri Sil</button>
+            </form>
+            
+            <div class="heading_container">
+              <%if(customer){%>
+              <h2>
+               <%=customer.name%>
+              
+              </h2></br>
+              <h3> Borç: <%=customer.price%> ₺</h3>
+               </br>
+               <%if(customer.debt){%>
+                <h3>  Borcu Var</h3>
+                <%} %>
+                <%if(!customer.debt){%>
+                  <h3>Borcu yok</h3>
+              <%} }%>
+            </div>
+            <a href="/customers/put/<%=customer.slug%>" class="btn btn-warning">Güncelle</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            
+            
+            <div class="heading_container">
+              <ul  style="width: 100%; class="list-group">
+                <li class="list-group-item active">İŞLER</li>
+                <%for(let i=0;i< cworks.length;i++){%>
+                <li class="list-group-item"><%=cworks[i]%></li>
+                <%}%>
+              </ul>
+          
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <%- include('partials/_footer')%>

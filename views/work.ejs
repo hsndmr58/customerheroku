@@ -1,0 +1,31 @@
+<%- include('partials/_header')%>
+
+  <!-- about section -->
+
+  <section class="about_section mt-4 mb-4">
+    <div class="container ">
+      <div class="row">
+        
+        <div class="col-md-12">
+          <div class="detail-box">
+            <form class="mb-5" action="/works/delete" method="post">
+              <input type="hidden" name="delete" value="<%=work._id%>">
+              <button class="btn btn-danger" onclick="return confirm('<%=work.name%> İş Silinecek ')">İşi Sil</button>
+            </form>
+    
+            <div class="heading_container">
+              <%if(work){%>
+              <h2>
+               <%=work.name%>
+              
+              </h2></br>
+              <%}%>
+            </div>
+            </a>
+            <a href="/works/put/<%=work._id%>" class="btn btn-warning">Güncelle</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <%- include('partials/_footer')%>

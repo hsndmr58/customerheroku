@@ -1,0 +1,50 @@
+<%- include('partials/_header')%>
+    <!-- end header section -->
+    <!-- slider section -->
+  <!-- catagory section -->
+
+  <section class="catagory_section mt-4 mb-4">
+    <div class="catagory_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            Müşteriler
+          </h2>
+          <h3>Toplam Alınacak <%=total%> ₺</h3>
+        </div>
+        <div class="row">
+
+          <% for (let i=0; i< customers.length; i++) { %>
+          <div style="border-bottom: 1px solid black;" class="col-sm-6 col-md-4 ">
+            <a href="/dashboard/customer/<%=customers[i].slug%>">
+            <div class="box ">
+              <div class="img-box">
+                <img src="images/cat1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  <%=customers[i].name%>
+                </h5>
+                <%if(customers[i].price!=0){%>
+                  <%if(customers[i].debt){%>
+                    <h5 style="color: red;">Borç: <%=customers[i].price%> ₺</h5>
+                  <%}%>
+                  <%}%>
+                  <%if(!customers[i].debt || customers[i].price==0){%>
+                    <h5 style="color:green;"> Borç Ödendi</h5>
+                    <%}%>
+                
+              </div>
+            </div></a>
+          </div>
+        
+          <% } %>
+
+        </div>
+        
+      </div>
+    </div>
+  
+  </section>
+
+  <%- include('partials/_footer')%>

@@ -1,0 +1,40 @@
+<%- include('partials/_header')%>
+    <!-- end header section -->
+
+
+  <!-- catagory section -->
+
+  <section class="catagory_section mt-4 mb-4 ">
+    <div class="catagory_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            Müşteri Oluştur
+          </h2> 
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ">
+          <form action="/customers/add" method="POST">
+            <div>
+              <input name="name" type="text" placeholder="Müşteri Adı" required/>
+            </div>
+            <div>
+              <input name="price" type="number" placeholder="Price" required/>
+            </div>
+            <div class="btn-box">
+              <button>
+                Ekle
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/_footer')%>

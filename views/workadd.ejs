@@ -1,0 +1,42 @@
+<%- include('partials/_header')%>
+    <!-- end header section -->
+
+
+  <!-- catagory section -->
+
+  <section class="catagory_section mt-4 mb-4 ">
+    <div class="catagory_container">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            İş Oluştur
+          </h2> 
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ">
+          <form action="/works/add" method="POST">
+            <div>
+              <input name="name" type="text" placeholder="İş Adı" required/>
+            </div>
+            <div class="btn-box">
+              <button>
+                Ekle
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="images/contact-img.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/_footer')%>
